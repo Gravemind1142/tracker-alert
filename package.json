@@ -7,7 +7,7 @@
     "test": "jest",
     "dev": "cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers tsx watch src/index.ts",
     "start": "cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers node dist/index.js",
-    "build": "tsup src/index.ts --minify && npx cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers playwright install chromium"
+    "build": "tsup src/index.ts --minify && npx cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers playwright install firefox"
   },
   "keywords": [],
   "author": "",

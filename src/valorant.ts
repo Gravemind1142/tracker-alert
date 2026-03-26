@@ -3,7 +3,7 @@ import { PlaywrightFetcher } from "./playwrightFetch";
 
 const MATCHES_URL = "https://api.tracker.gg/api/v2/valorant/standard/matches/riot/{player}?platform=pc&season={seasonId}&type=competitive";
 const STATE_KEY = "valorant";
-const INTERVAL_MS = 15 * 60 * 1000; // 15 minutes
+const INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 const SEASON_ID = "9d85c932-4820-c060-09c3-668636d4df1b";
 const PLAYER = "ryka#eater";
 const PROFILE_URL = `https://tracker.gg/valorant/profile/riot/${encodeURIComponent(PLAYER)}/overview?platform=pc&playlist=competitive&season=${SEASON_ID}`;

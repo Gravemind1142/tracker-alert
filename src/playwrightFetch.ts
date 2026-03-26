@@ -1,5 +1,5 @@
 import * as path from "path";
-import { chromium, type Browser, type BrowserContext } from "playwright";
+import { firefox, type Browser, type BrowserContext } from "playwright";
 
 // Ensure Playwright looks for browsers in the project-local directory
 process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(process.cwd(), "browsers");
@@ -13,13 +13,13 @@ export class PlaywrightFetcher {
     private context: BrowserContext | null = null;
 
     /**
-     * Launch the headless Chromium browser.
+     * Launch the headless Firefox browser.
      */
     async init(): Promise<void> {
-        this.browser = await chromium.launch({ headless: true });
+        this.browser = await firefox.launch({ headless: true });
         this.context = await this.browser.newContext({
             userAgent:
-                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:126.0) Gecko/20100101 Firefox/126.0",
         });
     }
 
@@ -43,7 +43,7 @@ export class PlaywrightFetcher {
             await page.waitForTimeout(4000);
 
             const content = await page.evaluate(() => document.body.innerText);
-            
+
             try {
                 return JSON.parse(content);
             } catch (e) {
