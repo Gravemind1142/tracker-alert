@@ -1,0 +1,31 @@
+{
+  "name": "tracker-alert",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers tsx watch src/index.ts",
+    "start": "cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers node dist/index.js",
+    "build": "tsup src/index.ts --minify && npx cross-env PLAYWRIGHT_BROWSERS_PATH=./browsers playwright install chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "dotenv": "^17.2.3",
+    "playwright": "^1.42.1",
+    "tsup": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^25.2.0",
+    "eslint": "^9.39.2",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.6",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
