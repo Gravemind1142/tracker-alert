@@ -1,9 +1,6 @@
 import * as path from "path";
 import { firefox, type Browser, type BrowserContext } from "playwright";
 
-// Ensure Playwright looks for browsers in the project-local directory
-process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(process.cwd(), "browsers");
-
 /**
  * Manages a Playwright browser instance, allowing it to be reused
  * for multiple fetches within the same session/interval.
